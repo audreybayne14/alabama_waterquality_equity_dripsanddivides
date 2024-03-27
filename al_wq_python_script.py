@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[81]:
 
 
 # import necessary packages
@@ -13,7 +12,7 @@ from scipy.stats import pearsonr
 import matplotlib.colors as mcolors
 
 
-# In[17]:
+
 
 
 # load csv data from merged excel power query table
@@ -23,7 +22,6 @@ merged_table = pd.read_csv("al_wq_master_query.csv")
 alabama_counties = gpd.read_file("alabama_counties.shp")
 
 
-# In[28]:
 
 
 # Load population data
@@ -36,7 +34,6 @@ county_data = county_data.merge(population_data, how='left', on='CountiesServed'
 county_data['violations_per_100k'] = (county_data['total_violations'] / county_data['cons_demo.ACSTOTPOP']) * 100000
 
 
-# In[87]:
 
 
 # create custom colormap
@@ -61,7 +58,6 @@ ax.set_ylabel('Latitude')
 plt.show()
 
 
-# In[89]:
 
 
 # create custom colormap
@@ -92,7 +88,6 @@ print("Pearson correlation coefficient:", correlation_coefficient)
 print("p-value:", p_value)
 
 
-# In[92]:
 
 
 # create custom colormap
@@ -123,7 +118,6 @@ print("Pearson correlation coefficient:", correlation_coefficient_lowincome)
 print("p-value:", p_value_lowincome)
 
 
-# In[96]:
 
 
 # create custom colormap
